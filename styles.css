@@ -1,0 +1,201 @@
+/* Custom CSS for ZeroLyric */
+
+/* Professional text effects */
+.glow-text {
+    text-shadow: 0 2px 4px rgba(255, 0, 51, 0.3);
+}
+
+.glow-text-large {
+    text-shadow: 0 4px 8px rgba(255, 0, 51, 0.4);
+}
+
+.hover-glow {
+    transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 4px 12px rgba(255, 0, 51, 0.2);
+}
+
+/* Cyber grid background */
+.cyber-grid {
+    background-image: 
+        linear-gradient(rgba(255, 0, 51, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 51, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* Animation classes */
+.animate-fade-in {
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 1s ease-in 0.5s forwards;
+    opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+    animation: fadeIn 1s ease-in 1s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff0033;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cc0029;
+}
+
+/* Custom selection color */
+::selection {
+    background: #ff0033;
+    color: white;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Preloader pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .glow-text-large {
+        text-shadow: 0 2px 6px rgba(255, 0, 51, 0.4);
+    }
+    
+    /* Prevent text overflow on mobile */
+    h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    .text-6xl {
+        font-size: 2.5rem !important;
+    }
+    
+    .text-8xl {
+        font-size: 3rem !important;
+    }
+    
+    /* Ensure proper spacing and prevent overflow */
+    .max-w-4xl, .max-w-6xl, .max-w-7xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: calc(100vw - 2rem);
+    }
+    
+    /* Fix button text wrapping */
+    .inline-block {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* Additional mobile fixes */
+    section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Ensure cards don't overflow */
+    .bg-cyber-light {
+        margin: 0 0.5rem;
+        word-wrap: break-word;
+    }
+    
+    /* Fix text in cards */
+    .text-3xl {
+        font-size: 1.5rem !important;
+    }
+    
+    .text-4xl {
+        font-size: 2rem !important;
+    }
+}
+
+/* Additional responsive fixes */
+@media (max-width: 480px) {
+    /* Extra small screens */
+    .px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .py-4 {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    
+    /* Smaller button text */
+    .text-lg {
+        font-size: 0.875rem !important;
+    }
+    
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+}
+
+/* Focus states for accessibility */
+a:focus, button:focus {
+    outline: 2px solid #ff0033;
+    outline-offset: 2px;
+}
+
+/* Loading spinner enhancement */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Card hover effects */
+.bg-cyber-light:hover {
+    transform: translateY(-2px);
+}
+
+/* Button pressed effect */
+.bg-cyber-red:active {
+    transform: scale(0.98);
+}
